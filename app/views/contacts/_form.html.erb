@@ -29,19 +29,29 @@
           <%= f.text_field :company %>
         </div>
         <div class="col-md-2">
-          <%= f.label :email %><br>
-          <%= f.text_field :email %>
+          <%= f.label :role %><br>
+          <%= f.text_field :role %>
         </div>
       </div><br>
       <div class="row">
         <div class="col-md-2 col-md-offset-4">
+          <%= f.label :email %><br>
+          <%= f.text_field :email %>
+        </div>
+        <div class="col-md-2">
           <%= f.label :phone_number, "Phone Number" %><br>
           <%= f.telephone_field :phone_number %>
         </div>
-        <div class="col-md-2">
+      </div><br>
+      <div class="row">
+        <div class="col-md-2 col-md-offset-4">
           <%= f.label :point_person, "Point Person" %><br>
           <%= f.text_field :point_person %>
         </div>
+        <div class="col-md-2">
+        <%= f.label :photo_url, "Photo URL" %><br>
+        <%= f.text_field :photo_url %>
+      </div>
       </div><br>
       <div class="row">
         <div class="col-md-2 col-md-offset-4">
@@ -56,11 +66,7 @@
       <div class="field">
         <%= f.label :alumni, "CORE Alumni" %>
         <%= f.check_box :alumni %>
-      </div>
-      <div class="field">
-        <%= f.label :photo_url, "Photo URL" %><br>
-        <%= f.text_field :photo_url %>
-      </div>
+      </div><br>
       <div class="actions">
         <%= f.submit "Submit", :class => "btn btn-success" %>
       </div>
