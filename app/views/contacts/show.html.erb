@@ -8,6 +8,7 @@
       (A)
     <% end %>
   </h2>
+  <h4><b><%= @contact.role %></b> at <b><%= @contact.company %></b></h4><br>
   <b>Email</b>: <%= @contact.email %><br>
   <% if @contact.phone_number? %>
     <b>Phone Number</b>: <%= @contact.phone_number %><br>
