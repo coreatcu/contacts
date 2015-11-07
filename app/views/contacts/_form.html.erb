@@ -11,7 +11,43 @@
     </div>
   <% end %>
 
+  <div class="field">
+    <%= f.label :first_name, "First Name" %><br>
+    <%= f.text_field :first_name %>
+  </div>
+  <div class="field">
+    <%= f.label :last_name, "Last Name" %><br>
+    <%= f.text_field :last_name %>
+  </div>
+  <div class="field">
+    <%= f.label :company, "Company" %><br>
+    <%= f.text_field :company %>
+  </div>
+  <div class="field">
+    <%= f.label :email %><br>
+    <%= f.text_field :email %>
+  </div>
+  <div class="field">
+    <%= f.label :phone_number, "Phone Number" %><br>
+    <%= f.telephone_field :phone_number %>
+  </div>
+  <div class="field">
+    <%= f.label :point_people, "Point Person/People" %><br>
+    <%= f.text_field :point_people %>
+  </div>
+  <div class="field">
+    <%= f.label :involvement %><br>
+    <%= f.text_field :involvement %>
+  </div>
+  <div class="field">
+    <%= f.label :open_asks, "Open Asks" %><br>
+    <%= f.text_field :open_asks %>
+  </div>
+  <div class="field">
+    <%= f.label :alumni, "CORE Alumni" %><br>
+    <%= f.check_box :alumni %>
+  </div>
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit "Submit" %>
   </div>
 <% end %>

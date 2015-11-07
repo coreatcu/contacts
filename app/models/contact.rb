@@ -9,6 +9,7 @@ class Contact
   field :point_people, type: String
   field :involvement, type: String
   field :open_asks, type: String
+  field :alumni, type: Boolean
 
   validates_presence_of :first_name, :last_name, :company, :email,
                         :point_people, :involvement

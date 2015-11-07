@@ -2,11 +2,11 @@ Rails.application.routes.draw do
   resources :contacts
   resources :users
 
-  get 'session/screate'
+  get 'session/create'
   get 'session/destroy'
   get 'session/new'
 
-  root 'session#new'
+  root 'contacts#index'
 
   get 'register' => 'users#new'
   get 'edit' => 'users#edit'
