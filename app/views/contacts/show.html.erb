@@ -1,4 +1,16 @@
 <p id="notice"><%= notice %></p>
 
+<h2>
+  <%= @contact.first_name %> <%= @contact.last_name %>
+  <% if @contact.alumni? %>
+    (A)
+  <% end %>
+</h2>
+Email: <%= @contact.email %><br>
+<% if @contact.phone_number? %>
+  Phone Number: <%= @contact.phone_number %><br>
+<% end %>
+Point Person: <%= @contact.point_person %><br>
+
 <%= link_to 'Edit', edit_contact_path(@contact) %> |
 <%= link_to 'Back', contacts_path %>

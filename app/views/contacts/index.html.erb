@@ -1,17 +1,35 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Listing Contacts</h1>
+<div class="text-center">
+<h1>Contacts</h1>
 
-<table>
+<br>
+<a href="<%= new_contact_path %>"><button type="button" class="btn btn-default">New Contact</button></a>
+<br><br>
+
+<table class="table">
   <thead>
     <tr>
-      <th colspan="3"></th>
+      <th class="text-center">Name</th>
+      <th class="text-center">Email</th>
+      <th class="text-center">Phone Number</th>
+      <th class="text-center">Point Person</th>
+      <th class="text-center" colspan="3">Options</th>
     </tr>
   </thead>
 
   <tbody>
     <% @contacts.each do |contact| %>
       <tr>
+        <td>
+          <%= contact.first_name %> <%= contact.last_name %>
+          <% if contact.alumni? %>
+            (A)
+          <% end %>
+        </td>
+        <td><%= contact.email %></td>
+        <td><%= contact.phone_number %></td>
+        <td><%= contact.point_person %></td>
         <td><%= link_to 'Show', contact %></td>
         <td><%= link_to 'Edit', edit_contact_path(contact) %></td>
         <td><%= link_to 'Destroy', contact, method: :delete, data: { confirm: 'Are you sure?' } %></td>
@@ -19,7 +37,4 @@
     <% end %>
   </tbody>
 </table>
-
-<br>
-
-<%= link_to 'New Contact', new_contact_path %>
+</div>

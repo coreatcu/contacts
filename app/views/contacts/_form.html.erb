@@ -32,8 +32,8 @@
     <%= f.telephone_field :phone_number %>
   </div>
   <div class="field">
-    <%= f.label :point_people, "Point Person/People" %><br>
-    <%= f.text_field :point_people %>
+    <%= f.label :point_person, "Point Person" %><br>
+    <%= f.text_field :point_person %>
   </div>
   <div class="field">
     <%= f.label :involvement %><br>
@@ -46,6 +46,10 @@
   <div class="field">
     <%= f.label :alumni, "CORE Alumni" %><br>
     <%= f.check_box :alumni %>
+  </div>
+  <div class="field">
+    <%= f.label :photo_url, "Photo URL" %><br>
+    <%= f.text_field :photo_url %>
   </div>
   <div class="actions">
     <%= f.submit "Submit" %>
