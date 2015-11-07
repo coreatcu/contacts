@@ -1,6 +1,6 @@
 class User
   include Mongoid::Document
-  include Bcrypt
+  include BCrypt
 
   attr_accessor :password
 

@@ -9,4 +9,8 @@ class Contact
   field :point_people, type: String
   field :involvement, type: String
   field :open_asks, type: String
+
+  validates_presence_of :first_name, :last_name, :company, :email,
+                        :point_people, :involvement
+  validates :email, :uniqueness => true
 end

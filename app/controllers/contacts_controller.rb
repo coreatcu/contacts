@@ -1,5 +1,6 @@
 class ContactsController < ApplicationController
   before_action :set_contact, only: [:show, :edit, :update, :destroy]
+  skip_before_filter :require_user, :only => [:create, :new]
 
   # GET /contacts
   # GET /contacts.json
