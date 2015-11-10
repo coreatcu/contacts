@@ -15,3 +15,8 @@
 //= require turbolinks
 //= require_tree .
 //= require bootstrap.min
+//= require jquery-tablesorter
+
+$(function(){
+  $("#contacts").tablesorter({ sortList: [[0,0], [1,0]] });
+});
