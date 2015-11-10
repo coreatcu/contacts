@@ -18,5 +18,7 @@
 //= require jquery-tablesorter
 
 $(function(){
-  $("#contacts").tablesorter({ sortList: [[0,0], [1,0]] });
+  $("#contacts").tablesorter({
+    sortList: [[0,0], [1,0]],
+  });
 });
