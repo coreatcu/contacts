@@ -1,40 +1,38 @@
 <p id="notice"><%= notice %></p>
 
 <div class="text-center">
+  <h1>Contacts</h1>
 
-<br>
-<table id="contacts" class="table tablesorter">
-  <thead>
-    <tr>
-      <th class="text-center">Name</th>
-      <th class="text-center">Company</th>
-      <th class="text-center">Role</th>
-      <th class="text-center">Email</th>
-      <th class="text-center">Phone Number</th>
-      <th class="text-center">Point Person</th>
-      <th class="text-center sorter-false" colspan="3">Options</th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @contacts.each do |contact| %>
+  <table id="contacts" class="table tablesorter">
+    <thead>
       <tr>
-        <td>
-          <%= contact.first_name %> <%= contact.last_name %>
-          <% if contact.alumni? %>
-            (A)
-          <% end %>
-        </td>
-        <td><%= contact.company %></td>
-        <td><%= contact.role %></td>
-        <td><%= contact.email %></td>
-        <td><%= contact.phone_number %></td>
-        <td><%= contact.point_person %></td>
-        <td><%= link_to 'Show', contact %></td>
-        <td><%= link_to 'Edit', edit_contact_path(contact) %></td>
-        <td><%= link_to 'Destroy', contact, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <th class="text-center">Name</th>
+        <th class="text-center">Company</th>
+        <th class="text-center">Role</th>
+        <th class="text-center">Email</th>
+        <th class="text-center">Point Person</th>
+        <th class="text-center sorter-false" colspan="3">Options</th>
       </tr>
-    <% end %>
-  </tbody>
-</table>
+    </thead>
+
+    <tbody>
+      <% @contacts.each do |contact| %>
+        <tr>
+          <td>
+            <%= contact.first_name %> <%= contact.last_name %>
+            <% if contact.alumni? %>
+              (A)
+            <% end %>
+          </td>
+          <td><%= contact.company %></td>
+          <td><%= contact.role %></td>
+          <td><%= contact.email %></td>
+          <td><%= contact.point_person %></td>
+          <td><%= link_to 'Show', contact %></td>
+          <td><%= link_to 'Edit', edit_contact_path(contact) %></td>
+          <td><%= link_to 'Destroy', contact, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
 </div>
