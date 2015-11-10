@@ -1,0 +1,19 @@
+<header class="navbar navbar-default">
+<div class="navbar-class">
+  <div class="container">
+    <ul class="nav navbar-nav">
+        <li><a href="/">CORE Contacts</a></li>
+        <% if @current_user %>
+            <li><a href="<%= new_contact_path %>">New Contact</a></li>
+        <% end %>
+    </ul>
+    <ul class="nav navbar-nav navbar-right">
+        <% if @current_user %>
+            <li><a href="/logout">Logout</a></li>
+        <% else %>
+            <li><a href="/register">Register</a></li>
+        <% end %>
+    </ul>
+  </div>
+</div>
+</header>
