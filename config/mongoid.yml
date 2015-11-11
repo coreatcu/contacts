@@ -137,10 +137,8 @@ test:
 production:
   clients:
     default:
-     uri: <%= ENV['MONGOLAB_URI'] %>
+      uri: <%= ENV['MONGOLAB_URI'] %>
       options:
+        connect_timeout: 15
         skip_version_check: true
         safe: true
-
-     options:
-       connect_timeout: 15
