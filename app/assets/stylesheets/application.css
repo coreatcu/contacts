@@ -20,20 +20,20 @@ textarea {
     resize: none;
 }
 
-a:hover {
-    background-color: transparent;
-}
-
-.tablesorter-header:focus {
-    outline: none;
-}
-
 li {
     font-family: 'Raleway';
 }
 
 td {
     font-family: 'Raleway';
+}
+
+a:hover {
+    background-color: transparent;
+}
+
+.tablesorter-header:focus {
+    outline: none;
 }
 
 thead th.up {
