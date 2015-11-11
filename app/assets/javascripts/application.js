@@ -17,8 +17,10 @@
 //= require bootstrap.min
 //= require jquery-tablesorter
 
-$(function(){
-  $("#contacts").tablesorter({
-    sortList: [[0,0], [1,0]],
-  });
+$(function () {
+    $("#contacts").tablesorter({
+        sortList: [[0,0], [1,0]],
+        cssAsc: 'up',
+        cssDesc: 'down'
+    });
 });

@@ -19,3 +19,24 @@
 textarea {
     resize: none;
 }
+
+a:hover {
+    background-color: transparent;
+}
+
+.tablesorter-header:focus {
+    outline: none;
+}
+
+thead th.up {
+    background-image: url(http://mottie.github.io/tablesorter/css/images/black-asc.gif);
+    background-position: right center;
+    background-repeat: no-repeat;
+    background-color: transparent;
+}
+thead th.down {
+    background-image: url(http://mottie.github.io/tablesorter/css/images/black-desc.gif);
+    background-position: right center;
+    background-repeat: no-repeat;
+    background-color: transparent;
+}
