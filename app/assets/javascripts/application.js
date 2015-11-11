@@ -19,7 +19,7 @@
 
 $(function () {
     $("#contacts").tablesorter({
-        sortList: [[0,0], [1,0]],
+        sortList: [[0,0]],
         cssAsc: 'up',
         cssDesc: 'down'
     });

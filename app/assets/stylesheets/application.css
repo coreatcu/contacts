@@ -28,6 +28,14 @@ a:hover {
     outline: none;
 }
 
+li {
+    font-family: 'Raleway';
+}
+
+td {
+    font-family: 'Raleway';
+}
+
 thead th.up {
     background-image: url(http://mottie.github.io/tablesorter/css/images/black-asc.gif);
     background-position: right center;
