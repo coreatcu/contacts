@@ -20,11 +20,7 @@ textarea {
     resize: none;
 }
 
-li {
-    font-family: 'Raleway';
-}
-
-td {
+li, p, td {
     font-family: 'Raleway';
 }
 
