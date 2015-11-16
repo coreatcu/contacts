@@ -5,7 +5,7 @@ class SessionController < ApplicationController
     user = User.find_by(email: params[:session][:email])
     if user
       session[:user_id] = user.id
-      redirect_to contacts_url
+      redirect_to root_url
     else
       render "new"
     end
