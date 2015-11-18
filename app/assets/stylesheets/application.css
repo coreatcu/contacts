@@ -28,6 +28,10 @@ textarea {
     resize: none;
 }
 
+textarea:focus, input:focus{
+    outline: 0;
+}
+
 li, p, td {
     font-family: 'Raleway';
 }

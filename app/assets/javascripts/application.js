@@ -21,6 +21,15 @@ $(function () {
     $("#contacts").tablesorter({
         sortList: [[0,0]],
         cssAsc: 'up',
-        cssDesc: 'down'
+        cssDesc: 'down',
+        cssChildRow: 'tablesorter-childRow',
+        widgets: ['zebra', 'filter'],
+        widgetOptions: {
+            filter_childRows : true,
+            filter_childByColumn : true,
+            filter_cssFilter : 'tablesorter-filter',
+            filter_ignoreCase : true,
+            filter_reset: '.reset'
+      }
     });
 });
