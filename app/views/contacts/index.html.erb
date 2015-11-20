@@ -19,7 +19,9 @@
         <tr>
           <td>
             <%= contact.first_name %> <%= contact.last_name %>
-            <% if contact.alumni? %>
+            <% if contact.core_alumni? and contact.columbia_alumni? %>
+              (CA)
+            <% elsif contact.columbia_alumni? %>
               (A)
             <% end %>
           </td>

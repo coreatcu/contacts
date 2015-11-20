@@ -72,7 +72,8 @@ class ContactsController < ApplicationController
     def contact_params
       params.require(:contact).permit(:first_name, :last_name, :company, :role,
                                       :email, :phone_number, :point_person,
-                                      :involvement, :open_asks, :alumni,
-                                      :photo_url)
+                                      :relationship_strength, :involvement,
+                                      :open_asks, :core_alumni,
+                                      :columbia_alumni, :photo_url)
     end
 end

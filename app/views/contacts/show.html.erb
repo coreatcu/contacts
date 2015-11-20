@@ -3,11 +3,20 @@
   <img src="<%= @contact.photo_url %>" style="max-width: 250px; max-height: 250px;">
   <h2>
     <%= @contact.first_name %> <%= @contact.last_name %>
-    <% if @contact.alumni? %>
+    <% if @contact.core_alumni? and @contact.columbia_alumni? %>
+      (CA)
+    <% elsif @contact.columbia_alumni? %>
       (A)
     <% end %>
   </h2>
-  <h4><b><%= @contact.role %></b> at <b><%= @contact.company %></b></h4><br>
+  <h4><b><%= @contact.role %></b> at <b><%= @contact.company %></b></h4>
+  <% if @contact.relationship_strength == 3 %>
+    &#x1F525; &#x1F525; &#x1F525;
+  <% elsif @contact.relationship_strength == 2 %>
+    &#x1F525; &#x1F525;
+  <% else %>
+    &#x1F525;
+  <% end %><br><br>
   <b>Email</b>: <%= @contact.email %><br>
   <% if @contact.phone_number? %>
     <b>Phone Number</b>: <%= @contact.phone_number %><br>
