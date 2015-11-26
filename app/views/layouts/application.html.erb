@@ -11,7 +11,11 @@
   <%= render "layouts/navbar" %>
 </head>
 <body>
-
+<div class="text-center">
+  <% flash.each do |key, value| %>
+    <p class="alert alert-<%= key %>"><%= value %></p>
+  <% end %>
+</div>
 <%= yield %>
 
 <script type="text/javascript">
