@@ -1,5 +1,5 @@
 class UsersMailer < ActionMailer::Base
-    default :from => "CORE Board <coreboard@columbia.edu>"
+    default :from => "CORE Board <coreatcu@gmail.com>"
 
     def registration_confirmation(user)
         @user = user
