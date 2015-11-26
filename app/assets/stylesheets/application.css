@@ -62,6 +62,19 @@ thead th.down {
     float: none;
 }
 
+.field_with_errors {
+  @extend .control-group;
+  @extend .error;
+  display: inline-block;
+  float: none;
+ }
+
+ #error_explanation {
+    border: none;
+    display: inline-block;
+    float: none;
+}
+
 @-webkit-keyframes fontfix {
     from { opacity: 1; }
     to   { opacity: 1; }

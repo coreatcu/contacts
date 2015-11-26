@@ -7,3 +7,4 @@ class UsersMailer < ActionMailer::Base
              :subject => "CORE Contacts Confirmation")
     end
  end
+ 

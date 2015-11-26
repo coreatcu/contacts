@@ -1,90 +1,88 @@
-<div class="text-center">
-  <%= form_for(@contact) do |f| %>
-    <% if @contact.errors.any? %>
-      <div id="error_explanation">
-        <h2><%= pluralize(@contact.errors.count, "error") %> prohibited this contact from being saved:</h2>
+<%= form_for(@contact) do |f| %>
+  <% if @contact.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@contact.errors.count, "error") %> prohibited this contact from being saved:</h2>
 
-        <ul>
-        <% @contact.errors.full_messages.each do |message| %>
-          <li><%= message %></li>
-        <% end %>
-        </ul>
-      </div>
-    <% end %>
-
-    <div class="container">
-      <div class="row">
-        <div class="col-md-2 col-md-offset-4">
-          <%= f.label :first_name, "First Name*" %><br>
-          <%= f.text_field :first_name %>
-        </div>
-        <div class="col-md-2">
-          <%= f.label :last_name, "Last Name*" %><br>
-          <%= f.text_field :last_name %>
-        </div>
-      </div><br>
-      <div class="row">
-        <div class="col-md-2 col-md-offset-4">
-          <%= f.label :company, "Company*" %><br>
-          <%= f.text_field :company %>
-        </div>
-        <div class="col-md-2">
-          <%= f.label :role, "Role*" %><br>
-          <%= f.text_field :role %>
-        </div>
-      </div><br>
-      <div class="row">
-        <div class="col-md-2 col-md-offset-4">
-          <%= f.label :email, "Email*" %><br>
-          <%= f.text_field :email %>
-        </div>
-        <div class="col-md-2">
-          <%= f.label :phone_number, "Phone Number" %><br>
-          <%= f.telephone_field :phone_number %>
-        </div>
-      </div><br>
-      <div class="row">
-        <div class="col-md-2 col-md-offset-4">
-          <%= f.label :point_person, "Point Person*" %><br>
-          <%= f.text_field :point_person %>
-        </div>
-        <div class="col-md-2">
-        <%= f.label :photo_url, "Photo URL" %><br>
-        <%= f.text_field :photo_url %>
-      </div>
-      </div><br>
-      <div class="row">
-        <%= f.label :relationship_strength, "Relationship*" %><br>
-            <%= f.radio_button :relationship_strength, 1 %>
-            &#x1F525;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            <%= f.radio_button :relationship_strength, 2 %>
-            &#x1F525; &#x1F525;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            <%= f.radio_button :relationship_strength, 3 %>
-            &#x1F525; &#x1F525; &#x1F525;
-      </div><br>
-      <div class="row">
-        <div class="col-md-2 col-md-offset-4">
-          <%= f.label :involvement, "Involvement*" %><br>
-          <%= f.text_area :involvement %>
-        </div>
-        <div class="col-md-2">
-          <%= f.label :open_asks, "Open Asks" %><br>
-          <%= f.text_area :open_asks %>
-        </div>
-      </div><br>
-      <div class="row">
-        <div class="col-md-2 col-md-offset-4">
-          <%= f.label :core_alumni, "CORE Alumni" %>
-          <%= f.check_box :core_alumni %>
-        </div>
-        <div class="col-md-2">
-          <%= f.label :columbia_alumni, "Columbia Alumni" %>
-          <%= f.check_box :columbia_alumni %>
-        </div>
-      </div><br>
-      <div class="actions">
-        <%= f.submit "Submit", :class => "btn btn-success" %>
-      </div>
+      <ul>
+      <% @contact.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
     </div>
-    <% end %>
-</div>
+  <% end %>
+
+  <div class="container">
+    <div class="row">
+      <div class="col-md-2 col-md-offset-4">
+        <%= f.label :first_name, "First Name*" %><br>
+        <%= f.text_field :first_name %>
+      </div>
+      <div class="col-md-2">
+        <%= f.label :last_name, "Last Name*" %><br>
+        <%= f.text_field :last_name %>
+      </div>
+    </div><br>
+    <div class="row">
+      <div class="col-md-2 col-md-offset-4">
+        <%= f.label :company, "Company*" %><br>
+        <%= f.text_field :company %>
+      </div>
+      <div class="col-md-2">
+        <%= f.label :role, "Role*" %><br>
+        <%= f.text_field :role %>
+      </div>
+    </div><br>
+    <div class="row">
+      <div class="col-md-2 col-md-offset-4">
+        <%= f.label :email, "Email*" %><br>
+        <%= f.text_field :email %>
+      </div>
+      <div class="col-md-2">
+        <%= f.label :phone_number, "Phone Number" %><br>
+        <%= f.telephone_field :phone_number %>
+      </div>
+    </div><br>
+    <div class="row">
+      <div class="col-md-2 col-md-offset-4">
+        <%= f.label :point_person, "Point Person*" %><br>
+        <%= f.text_field :point_person %>
+      </div>
+      <div class="col-md-2">
+      <%= f.label :photo_url, "Photo URL" %><br>
+      <%= f.text_field :photo_url %>
+    </div>
+    </div><br>
+    <div class="row">
+      <%= f.label :relationship_strength, "Relationship*" %><br>
+          <%= f.radio_button :relationship_strength, 1 %>
+          &#x1F525;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          <%= f.radio_button :relationship_strength, 2 %>
+          &#x1F525; &#x1F525;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          <%= f.radio_button :relationship_strength, 3 %>
+          &#x1F525; &#x1F525; &#x1F525;
+    </div><br>
+    <div class="row">
+      <div class="col-md-2 col-md-offset-4">
+        <%= f.label :involvement, "Involvement*" %><br>
+        <%= f.text_area :involvement %>
+      </div>
+      <div class="col-md-2">
+        <%= f.label :open_asks, "Open Asks" %><br>
+        <%= f.text_area :open_asks %>
+      </div>
+    </div><br>
+    <div class="row">
+      <div class="col-md-2 col-md-offset-4">
+        <%= f.label :core_alumni, "CORE Alumni" %>
+        <%= f.check_box :core_alumni %>
+      </div>
+      <div class="col-md-2">
+        <%= f.label :columbia_alumni, "Columbia Alumni" %>
+        <%= f.check_box :columbia_alumni %>
+      </div>
+    </div><br>
+    <div class="actions">
+      <%= f.submit "Submit", :class => "btn btn-success" %>
+    </div>
+  </div>
+<% end %>
