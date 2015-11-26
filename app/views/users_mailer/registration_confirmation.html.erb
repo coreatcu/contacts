@@ -1,3 +1,13 @@
-Hey, <%= @user.first_name %>!
-
-Thanks for registering for CORE Contacts! To confirm your email, click on <%= confirm_email_user_url(@user.confirm_token) %>. After that, you can get started with adding your contacts to the database!
+<html>
+  <head>
+    <meta content = 'text/html; charset = UTF-8' http-equiv = 'Content-Type' />
+  </head>
+   
+  <body>
+    <p>Hey, <%= @user.first_name %>!</p>
+    <p>
+       Thanks for registering for CORE Contacts! To confirm your email, click <a href="<%= confirm_email_user_url(@user.confirm_token) %>">here</a>. After that, you can get started with adding your contacts to the database!
+    </p>
+    <p>Let us know if you have any questions.</p>
+  </body>
+</html>
