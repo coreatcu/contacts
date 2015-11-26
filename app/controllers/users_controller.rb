@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
   before_action :set_user, only: [:show, :edit, :update, :destroy]
-  skip_before_filter :require_user, :only => [:create, :new]
+  skip_before_filter :require_user, :only => [:create, :new, :confirm_email]
 
   # GET /users
   # GET /users.json
@@ -29,7 +29,8 @@ class UsersController < ApplicationController
 
     respond_to do |format|
       if @user.save
-        format.html { redirect_to @user, notice: 'User was successfully created.' }
+        UsersMailer.registration_confirmation(@user).deliver
+        format.html { redirect_to @user, notice: 'Success! Confirm your email to continue.' }
         format.json { render :show, status: :created, location: @user }
       else
         format.html { render :new }
@@ -59,6 +60,18 @@ class UsersController < ApplicationController
     respond_to do |format|
       format.html { redirect_to users_url, notice: 'User was successfully destroyed.' }
       format.json { head :no_content }
+    end
+  end
+
+  def confirm_email
+    user = User.find_by(confirm_token: params[:id])
+    if user
+      user.email_activate
+      flash[:success] = "Your email has been confirmed."
+      redirect_to login_url
+    else
+      flash[:error] = "We couldn't find that user."
+      redirect_to root_url
     end
   end
 

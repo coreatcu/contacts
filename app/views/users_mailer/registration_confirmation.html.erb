@@ -1,0 +1,3 @@
+Hey, <%= @user.first_name %>!
+
+Thanks for registering for CORE Contacts! To confirm your email, click on <%= confirm_email_user_url(@user.confirm_token) %>. After that, you can get started with adding your contacts to the database!

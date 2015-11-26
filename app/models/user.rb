@@ -3,11 +3,14 @@ class User
   include BCrypt
 
   attr_accessor :password
+  before_create :confirmation_token
 
   field :first_name, type: String
   field :last_name, type: String
   field :email, type: String
   field :password_hash, type: String
+  field :confirmed, type: Boolean
+  field :confirm_token, type: String
 
   validates_presence_of :first_name, :last_name, :email, :password
   validates :email, :uniqueness => true
@@ -15,7 +18,7 @@ class User
     :minimum => 6,
     :maximum => 20,
     :too_short => "Passwords must be at least %{count} characters.",
-    :too_long => "Passwords mut be at most %{count} characters."
+    :too_long => "Passwords must be at most %{count} characters."
   }
 
   before_save :encrypt_password
@@ -35,9 +38,23 @@ class User
     user_pass == password
   end
 
+  def email_activate
+    self.confirmed = true
+    self.confirm_token = nil
+    save!(:validate => false)
+  end
+
   protected
   
     def encrypt_password
       self.password_hash = Password.create(@password)
+    end
+
+  private
+
+    def confirmation_token
+      if self.confirm_token.blank?
+          self.confirm_token = SecureRandom.urlsafe_base64.to_s
+      end
     end
 end
