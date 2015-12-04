@@ -14,6 +14,8 @@ class User
 
   validates_presence_of :first_name, :last_name, :email, :password
   validates :email, :uniqueness => true
+  validates :email, format: { with: /\b[A-Z0-9._%a-z\-]+@coreatcu\.com\z/,
+                              message: "must be a coreatcu.com email" }
   validates :password, :length => {
     :minimum => 6,
     :maximum => 20,
