@@ -11,6 +11,7 @@ class User
   field :password_hash, type: String
   field :confirmed, type: Boolean
   field :confirm_token, type: String
+  field :admin, type: Boolean
 
   validates_presence_of :first_name, :last_name, :email, :password
   validates :email, :uniqueness => true

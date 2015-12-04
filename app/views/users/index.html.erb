@@ -6,7 +6,9 @@
       <tr>
         <th class="text-center">Name</th>
         <th class="text-center">Email</th>
-        <th class="text-center" colspan="3">Options</th>
+        <% if @current_user.admin == true %>
+          <th class="text-center" colspan="3">Options</th>
+        <% end %>
       </tr>
     </thead>
 
@@ -15,7 +17,10 @@
         <tr>
           <td><%= user.first_name %> <%= user.last_name %></td>
           <td><%= user.email %></td>
-          <td><%= link_to 'Destroy', user, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+          <% if @current_user.admin == true %>
+            <td><%= link_to 'Edit', edit_user_path(user) %></td>
+            <td><%= link_to 'Destroy', user, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+          <% end %>
         </tr>
       <% end %>
     </tbody>
