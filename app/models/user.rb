@@ -35,7 +35,7 @@ class User
   end
   
   def self.password_correct?(user_email, password)
-    user = find_by_email user_email
+    user = User.find_by(email: user_email)
     return if user.nil?
     user_pass = Password.new(user.password_hash)
     user_pass == password
