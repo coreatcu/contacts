@@ -5,6 +5,9 @@
         <li><a href="/">CORE Contacts</a></li>
         <% if @current_user %>
             <li><a href="<%= new_contact_path %>">New Contact</a></li>
+            <% if @current_user.admin %>
+                <li><a href="<%= users_path %>">Users</a></li>
+            <% end %>
         <% end %>
     </ul>
     <ul class="nav navbar-nav navbar-right">

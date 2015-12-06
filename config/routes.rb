@@ -9,6 +9,7 @@ Rails.application.routes.draw do
   root 'contacts#index'
 
   get 'register' => 'users#new'
+  get 'users' => 'users#index'
   get 'edit' => 'users#edit'
   get 'login' => 'session#new'
   post 'login' => 'session#create'
