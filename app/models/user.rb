@@ -1,18 +1,18 @@
 class User
   include Mongoid::Document
-  include BCrypt
+  include ActiveModel::SecurePassword
 
-  attr_accessor :password
   before_create :confirmation_token
 
   field :first_name, type: String
   field :last_name, type: String
   field :email, type: String
-  field :password_hash, type: String
+  field :password_digest, type: String
   field :confirmed, type: Boolean
   field :confirm_token, type: String
   field :admin, type: Boolean
 
+  has_secure_password
   validates_presence_of :first_name, :last_name, :email, :password
   validates :email, :uniqueness => true
   validates :email, format: { with: /\b[A-Z0-9._%a-z\-]+@coreatcu\.com\z/,
@@ -24,34 +24,11 @@ class User
     :too_long => "Passwords must be at most %{count} characters."
   }
 
-  before_save :encrypt_password
-
-  def self.authenticate(email, password)
-    if password_correct?(email, password)
-      true
-    else
-      false
-    end
-  end
-  
-  def self.password_correct?(user_email, password)
-    user = User.find_by(email: user_email)
-    return if user.nil?
-    user_pass = Password.new(user.password_hash)
-    user_pass == password
-  end
-
   def email_activate
     self.confirmed = true
     self.confirm_token = nil
     save!(:validate => false)
   end
-
-  protected
-  
-    def encrypt_password
-      self.password_hash = Password.create(@password)
-    end
 
   private
 
