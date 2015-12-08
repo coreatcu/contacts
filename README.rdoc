@@ -4,7 +4,7 @@ An internal database to keep track of the contacts we have through CORE.
 
 === Setup
 
-To develop on this project, you'll need to install Ruby, Rails, and MongoDB.
+To develop on this project, you'll need to install {Ruby}[https://www.ruby-lang.org/en/documentation/installation/], {Rails}[http://rubyonrails.org/download/], and {MongoDB}[https://docs.mongodb.org/manual/installation/].
 
-1. Run `bundle install` to install the Ruby gems you need.
-2. To start the local server, run `rails s` and head to `localhost:3000` on your web browser.
+1. Run <tt>bundle install</tt> to install the Ruby gems you need.
+2. To start the local server, run <tt>rails s</tt> and head to <tt>localhost:3000</tt> on your web browser.
