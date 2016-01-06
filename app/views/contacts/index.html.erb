@@ -30,7 +30,7 @@
           <td><%= contact.company %></td>
           <td><%= contact.role %></td>
           <td><%= contact.email %></td>
-          <td><%= contact.point_person %></td>
+          <td><%= contact.user.first_name %> <%= contact.user.last_name %></td>
           <td><%= link_to "<i class=\"fa fa-eye\"></i>".html_safe, contact %></td>
           <td><%= link_to "<i class=\"fa fa-pencil\"></i>".html_safe, edit_contact_path(contact) %></td>
           <td><%= link_to "<i class=\"fa fa-trash\"></i>".html_safe, contact, method: :delete, data: { confirm: 'Are you sure?' } %></td>

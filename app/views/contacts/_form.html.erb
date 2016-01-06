@@ -45,7 +45,7 @@
     <div class="row">
       <div class="col-md-2 col-md-offset-4">
         <%= f.label :point_person, "Point Person*" %><br>
-        <%= collection_select(:user_id, :id, @users, :id, :name) %>
+        <%= collection_select :user_id, :id, @users, :id, :name, {:prompt => @select_value, :selected => @contact.user_id} %>
       </div>
       <div class="col-md-2">
       <%= f.label :photo_url, "Photo URL" %><br>
