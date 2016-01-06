@@ -15,16 +15,20 @@ class ContactsController < ApplicationController
   # GET /contacts/new
   def new
     @contact = Contact.new
+    @users = User.order('first_name ASC')
   end
 
   # GET /contacts/1/edit
   def edit
+    @users = User.order('first_name ASC')
   end
 
   # POST /contacts
   # POST /contacts.json
   def create
     @contact = Contact.new(contact_params)
+    @user = User.find(params[:user_id][:id])
+    @user.contacts << @contact
 
     if @contact.save
       flash[:success] = 'Contact was successfully created.'
@@ -38,6 +42,9 @@ class ContactsController < ApplicationController
   # PATCH/PUT /contacts/1
   # PATCH/PUT /contacts/1.json
   def update
+    @user = User.find(params[:user_id][:id])
+    @user.contacts << @contact
+
     if @contact.update(contact_params)
       flash[:success] = 'Contact was successfully updated.'
       redirect_to @contact

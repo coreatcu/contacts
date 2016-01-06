@@ -1,6 +1,7 @@
 class User
   include Mongoid::Document
   include ActiveModel::SecurePassword
+  has_many :contacts
 
   before_create :confirmation_token
 
@@ -20,9 +21,13 @@ class User
   validates :password, :length => {
     :minimum => 6,
     :maximum => 20,
-    :too_short => "Passwords must be at least %{count} characters.",
-    :too_long => "Passwords must be at most %{count} characters."
+    :too_short => "must be at least %{count} characters.",
+    :too_long => "must be at most %{count} characters."
   }
+
+  def name
+    "#{first_name} #{last_name}"
+  end
 
   def email_activate
     self.confirmed = true
