@@ -23,7 +23,7 @@
   <% if @contact.phone_number? %>
     <b>Phone Number</b>: <%= @contact.phone_number %><br>
   <% end %>
-  <b>Point Person</b>: <%= @contact.point_person %><br>
+  <b>Point Person</b>: <%= @contact.user.first_name %> <%= @contact.user.last_name %><br>
   <b>Involvement</b>: <%= @contact.involvement %><br>
   <b>Open Asks</b>: <%= @contact.open_asks %><br>
 

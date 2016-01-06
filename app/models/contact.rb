@@ -8,7 +8,6 @@ class Contact
   field :role, type: String
   field :email, type: String
   field :phone_number, type: String
-  field :point_person, type: String
   field :relationship_strength, type: Integer
   field :involvement, type: String
   field :open_asks, type: String
@@ -17,6 +16,6 @@ class Contact
   field :photo_url, type: String
 
   validates_presence_of :first_name, :last_name, :company, :role, :email,
-                        :relationship_strength, :point_person, :involvement
+                        :relationship_strength, :involvement
   validates :email, :uniqueness => true
 end
