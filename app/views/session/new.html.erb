@@ -1,4 +1,7 @@
 <div class="text-center">
+  <% flash.each do |key, value| %>
+    <p class="alert alert-<%= key %>"><%= value %></p>
+  <% end %>
   <h1>Log In</h1>
 
   <%= form_for :session, :url => login_path, :method => :post do |f| %>

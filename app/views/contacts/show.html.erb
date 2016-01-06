@@ -1,4 +1,7 @@
 <div class="text-center">
+  <% flash.each do |key, value| %>
+    <p class="alert alert-<%= key %>"><%= value %></p>
+  <% end %>
   <img src="<%= @contact.photo_url %>" style="max-width: 250px; max-height: 250px;">
   <h2>
     <%= @contact.first_name %> <%= @contact.last_name %>
