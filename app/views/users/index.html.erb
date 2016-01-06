@@ -7,7 +7,7 @@
         <th class="text-center">Name</th>
         <th class="text-center">Email</th>
         <% if @current_user.admin %>
-          <th class="text-center" colspan="3">Options</th>
+          <th class="text-center" colspan="2"></th>
         <% end %>
       </tr>
     </thead>
@@ -18,8 +18,8 @@
           <td><%= user.first_name %> <%= user.last_name %></td>
           <td><%= user.email %></td>
           <% if @current_user.admin %>
-            <td><%= link_to 'Edit', edit_user_path(user) %></td>
-            <td><%= link_to 'Destroy', user, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+            <td><%= link_to "<i class=\"fa fa-pencil\"></i>".html_safe, edit_user_path(user) %></td>
+            <td><%= link_to "<i class=\"fa fa-trash\"></i>".html_safe, user, method: :delete, data: { confirm: 'Are you sure?' } %></td>
           <% end %>
         </tr>
       <% end %>
