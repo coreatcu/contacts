@@ -1,0 +1,11 @@
+<html>
+  <head>
+    <meta content = 'text/html; charset = UTF-8' http-equiv = 'Content-Type' />
+  </head>
+   
+  <body>
+    <p>Hey, <%= @contact.user.first_name %>!</p>
+    <p><%= @asker.name %> just asked to be introduced to <%= @contact.first_name %> <%= @contact.last_name %>.</p>
+    <p><%= @asker.first_name %>'s email is <%= @asker.email %>, and <%= @contact.first_name %>'s email is <%= @contact.email %>. Let us know if you have any questions.</p>
+  </body>
+</html>

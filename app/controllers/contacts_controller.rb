@@ -1,5 +1,6 @@
 class ContactsController < ApplicationController
-  before_action :set_contact, only: [:show, :edit, :update, :destroy]
+  before_action :set_contact, only: [:show, :edit, :update, :destroy,
+                                     :introduce]
 
   # GET /contacts
   # GET /contacts.json
@@ -60,6 +61,17 @@ class ContactsController < ApplicationController
     @contact.destroy
     flash[:success] = 'Contact was successfully deleted.'
     redirect_to contacts_url
+  end
+
+  def introduce
+    if @contact.user
+      ContactsMailer.introduce(@contact, @current_user).deliver_now
+      flash[:success] = "You just asked #{@contact.user.name} to contact #{@contact.first_name}!"
+      redirect_to root_url
+    else
+      flash[:error] = "That didn't work!"
+      redirect_to root_url
+    end
   end
 
   private
