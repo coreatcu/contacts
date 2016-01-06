@@ -51,7 +51,7 @@ class ContactsController < ApplicationController
   # DELETE /contacts/1.json
   def destroy
     @contact.destroy
-    flash[:success] = 'Contact was successfully destroyed.'
+    flash[:success] = 'Contact was successfully deleted.'
     redirect_to contacts_url
   end
 

@@ -31,6 +31,7 @@ $(function () {
             filter_cssFilter : 'tablesorter-filter',
             filter_ignoreCase : true,
             filter_reset: '.reset'
-      }
+      },
+      headers: { 5: { filter: false} }
     });
 });

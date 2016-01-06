@@ -9,7 +9,7 @@
         <th class="text-center">Role</th>
         <th class="text-center">Email</th>
         <th class="text-center">Point Person</th>
-        <th class="text-center sorter-false" colspan="3">Options</th>
+        <th class="text-center sorter-false filter-false" colspan="3"></th>
       </tr>
     </thead>
 
@@ -28,9 +28,9 @@
           <td><%= contact.role %></td>
           <td><%= contact.email %></td>
           <td><%= contact.point_person %></td>
-          <td><%= link_to 'Show', contact %></td>
-          <td><%= link_to 'Edit', edit_contact_path(contact) %></td>
-          <td><%= link_to 'Destroy', contact, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+          <td><%= link_to "<i class=\"fa fa-eye\"></i>".html_safe, contact %></td>
+          <td><%= link_to "<i class=\"fa fa-pencil\"></i>".html_safe, edit_contact_path(contact) %></td>
+          <td><%= link_to "<i class=\"fa fa-trash\"></i>".html_safe, contact, method: :delete, data: { confirm: 'Are you sure?' } %></td>
         </tr>
       <% end %>
     </tbody>

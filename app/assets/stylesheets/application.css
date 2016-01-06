@@ -36,12 +36,20 @@ li, p, td {
     font-family: 'Raleway';
 }
 
+i {
+  color: black;
+}
+
 a:hover {
     background-color: transparent;
 }
 
 .tablesorter-header:focus {
     outline: none;
+}
+
+.tablesorter thead .disabled {
+    display: none;
 }
 
 thead th.up {
