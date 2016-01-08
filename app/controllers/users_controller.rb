@@ -32,7 +32,7 @@ class UsersController < ApplicationController
       flash[:success] = 'Success! Confirm your email to continue.'
       redirect_to @user
     else
-      flash[:error] = 'Whoops, that didn\'t work!'
+      flash[:danger] = 'Whoops, that didn\'t work!'
       render 'new'
     end
   end
@@ -44,7 +44,7 @@ class UsersController < ApplicationController
       flash[:success] = 'User was successfully updated.'
       redirect_to @user
     else
-      flash[:error] = 'Whoops, that didn\'t work!'
+      flash[:danger] = 'Whoops, that didn\'t work!'
       render 'edit'
     end
   end
@@ -64,7 +64,7 @@ class UsersController < ApplicationController
       flash[:success] = "Your email has been confirmed."
       redirect_to login_url
     else
-      flash[:error] = "We couldn't find that user."
+      flash[:danger] = "We couldn't find that user."
       redirect_to root_url
     end
   end

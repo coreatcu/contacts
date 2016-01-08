@@ -35,7 +35,7 @@ class ContactsController < ApplicationController
       flash[:success] = 'Contact was successfully created.'
       redirect_to @contact
     else
-      flash[:error] = 'Whoops, that didn\'t work!'
+      flash[:danger] = 'Whoops, that didn\'t work!'
       render 'new'
     end
   end
@@ -50,7 +50,7 @@ class ContactsController < ApplicationController
       flash[:success] = 'Contact was successfully updated.'
       redirect_to @contact
     else
-      flash[:error] = 'Whoops, that didn\'t work!'
+      flash[:danger] = 'Whoops, that didn\'t work!'
       render 'edit'
     end
   end
@@ -69,7 +69,7 @@ class ContactsController < ApplicationController
       flash[:success] = "You just asked #{@contact.user.name} to contact #{@contact.first_name}!"
       redirect_to root_url
     else
-      flash[:error] = "That didn't work!"
+      flash[:danger] = "That didn't work!"
       redirect_to root_url
     end
   end

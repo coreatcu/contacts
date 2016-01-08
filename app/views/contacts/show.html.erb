@@ -10,6 +10,7 @@
     <% elsif @contact.columbia_alumni? %>
       (A)
     <% end %>
+    <%= link_to "<i class=\"fa fa-pencil\"></i>".html_safe, edit_contact_path(@contact) %>
   </h2>
   <h4><b><%= @contact.role %></b> at <b><%= @contact.company %></b></h4>
   <% if @contact.relationship_strength == 3 %>
@@ -28,6 +29,5 @@
   <b>Open Asks</b>: <%= @contact.open_asks %><br>
 
   <br>
-  <%= link_to 'Edit', edit_contact_path(@contact) %> |
   <%= link_to 'Back', contacts_path %>
 </div>

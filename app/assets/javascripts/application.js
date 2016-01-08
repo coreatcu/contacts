@@ -28,7 +28,7 @@ $(function () {
         widgetOptions: {
             filter_childRows : true,
             filter_childByColumn : true,
-            filter_cssFilter : 'tablesorter-filter',
+            filter_cssFilter : 'tablesorter-filter form-control',
             filter_ignoreCase : true,
             filter_reset: '.reset'
       },

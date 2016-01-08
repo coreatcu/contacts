@@ -8,11 +8,11 @@ class SessionController < ApplicationController
         session[:user_id] = user.id
         redirect_to root_url
       else
-        flash[:error] = "You need to confirm your email first!"
+        flash[:danger] = "You need to confirm your email first!"
         render "new"
       end
     else
-      flash[:error] = "Login failed."
+      flash[:danger] = "Login failed."
       render "new"
     end
   end
