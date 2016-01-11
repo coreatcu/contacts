@@ -1,22 +1,23 @@
 <header class="navbar navbar-default">
-<div class="navbar-class">
-  <div class="container">
-    <ul class="nav navbar-nav">
+  <div class="navbar-class">
+    <div class="container">
+      <ul class="nav navbar-nav">
         <li><li><a href="/" class="pull-left"><%= image_tag("logo.png") %></a></li></li>
         <% if @current_user %>
-            <li><a href="<%= new_contact_path %>">New Contact</a></li>
-            <% if @current_user.admin %>
-                <li><a href="<%= users_path %>">Users</a></li>
-            <% end %>
+          <li><a href="<%= new_contact_path %>">New Contact</a></li>
+          <% if @current_user.admin %>
+            <li><a href="<%= users_path %>">Users</a></li>
+          <% end %>
         <% end %>
-    </ul>
-    <ul class="nav navbar-nav navbar-right">
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
         <% if @current_user %>
-            <li><a href="/logout">Logout</a></li>
+          <li><a href="/logout">Logout</a></li>
         <% else %>
-            <li><a href="/register">Register</a></li>
+          <li><a href="/login">Login</a></li>
+          <li><a href="/register">Register</a></li>
         <% end %>
-    </ul>
+      </ul>
+    </div>
   </div>
-</div>
 </header>
