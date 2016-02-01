@@ -35,6 +35,9 @@ gem 'bcrypt', '~> 3.1.7'
 # Add environment variables locally
 gem 'figaro', "~> 0.7.0"
 
+# Import Excel files
+gem 'roo'
+
 # Use Unicorn as the app server
 # gem 'unicorn'
 

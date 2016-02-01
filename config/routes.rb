@@ -27,6 +27,10 @@ Rails.application.routes.draw do
     end
   end
 
+  resources :contacts do
+    collection { post :import }
+  end
+
    match "/404" => "errors#error404", via: [:get, :post, :patch, :delete]
 
   # The priority is based upon order of creation: first created -> highest priority.

@@ -74,6 +74,12 @@ class ContactsController < ApplicationController
     end
   end
 
+  def import
+    Contact.import(params[:file])
+    flash[:success] = "Contacts imported."
+    redirect_to root_url
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_contact
