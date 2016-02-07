@@ -1,5 +1,3 @@
-ruby '2.2.4'
-
 source 'https://rubygems.org'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
@@ -38,7 +36,6 @@ gem 'figaro', "~> 0.7.0"
 
 # Import Excel files
 gem 'roo'
-gem "iconv", "~> 1.0.3"
 
 # Use Unicorn as the app server
 # gem 'unicorn'
